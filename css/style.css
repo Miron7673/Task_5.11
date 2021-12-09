@@ -1,0 +1,138 @@
+/* определение стиля элемента body */
+body {
+    margin: 0; /* величины отступа от каждого края элемента */
+    padding: 0; /* значения полей вокруг содержимого элемента */
+}
+
+/* определение стиля блока header*/
+header {
+    position: fixed; /* позиционированиt элемента относительно окна браузера - не меняет своего положения при прокрутке веб-страницы */
+    background: url(../images/header.jpg) bottom no-repeat; /* фоновый рисунок блока */
+    top: 0; /* расстояние от верхнего края экрана до верхнего края блока */
+    left: 0; /* расстояние от левого края экрана до левого края блока */
+    right: 0; /* расстояние от правого края экрана до правого края блока */
+    display: flex; /* отображает элемент как контейнер Flex на уровне блоков */
+    align-items: center; /* выравнивание элементов блока по центру */
+    justify-content: center; /* расположение элементов в центре блока */
+    height: 230px; /* высота блока */
+    
+}
+
+/* определение стиля заголовка h1 в header */
+h1 {
+    color: #ecd97a; /* цвет шрифта*/
+    font-size: 4rem; /* размер шрифта */
+    font-family: Arial, Helvetica, sans-serif; /* шрифт */
+}
+
+/* определение стиля блока новостей */
+.news {
+    background-color: #ffffff;
+    padding: 50px 0 32px;
+    margin-top: 200px;
+}
+
+/* определение стиля каждой статьи */
+article {
+    width: 768px;
+    margin: 0 auto 32px;
+    padding: 6px 15px;
+    border-bottom: 1px solid rgb(128, 128, 128);
+    text-align: justify;
+}
+
+/* определение стиля гиперссылок каждой статьи */
+article a {
+    color: rgb(33, 37, 41);
+    text-decoration: none; /* удаление подчеркивания текста гиперссылок */
+}
+
+/* изменение цвета гиперссылок на синий при наведеннии на них указателем */
+article a:hover {
+    color: #0085a1;
+}
+
+/* определение стиля заголовков в каждой статье */
+article h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 5px;
+}
+
+/* определение стиля блока имени журналиста в каждой статье */
+.article-meta {
+    color: rgb(134, 142, 150);
+    margin-bottom: 5px;
+}
+
+/* определение стиля блока картинки в каждой статье */
+article img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* определение стиля блока footer - отступы и центрирование текста */
+footer {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+/* определение отступов гипперссылок блока footer */
+footer .links {
+    margin-bottom: 50px;
+}
+
+/* определение формата текста гиперссылок блока footer*/
+footer .links>a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600; /* насыщенность шрифта*/
+    letter-spacing: 0.1rem; /* интервал между символами*/
+    text-decoration: none; /* удаление подчеркивания текста гиперссылок*/
+    text-transform: uppercase; /* преобразование текста гиперссылок в прописные символы*/
+}
+
+.copyright {
+    color: gray;
+    font-family: 'Times New Roman', Times, serif ;
+}
+
+/* определение стиля для раскрывающегося текста в каждой статье */
+/* скрытие чекбоксов и блоков с содержанием */
+.hide {
+    display: none; 
+}
+.hide + label ~ div{
+    display: none;
+}
+/* оформление текста label */
+.hide + label {
+    border-bottom: 1px dotted green;
+    padding: 0;
+    color: blue;
+    cursor: pointer;
+    display: inline-block; 
+}
+/* вид текста label при активном переключателе */
+.hide:checked + label {
+    color: red;
+    border-bottom: 0;
+}
+/* когда чекбокс активен - показ блоков с содержанием в каждой статье  */
+.hide:checked + label + div {
+    display: block;
+}
+
+/* использование псевдоэлемента для выделения цветом каждой четной статьи*/
+article:nth-child(even) {
+    background-color: rgb(229, 233, 195);
+}
+
+/* использование псевдоэлемента для добавления текста "New" к заголовкам первых 2х статей*/
+.hot_news:before {
+    content: "New";
+    color: red;
+}
+
